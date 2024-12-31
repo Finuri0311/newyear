@@ -133,16 +133,24 @@ body {
   top: 0%;
   animation: old_animation 2.5s ease-in-out 4s forwards;
   margin-left: -80px;
+  z-index: 5;
 }
 
 @keyframes old_animation {
   0% {
     top: 0%;
+    opacity: 1;
+  }
+  50% {
+    top: -50%;
+    opacity: 0.5;
   }
   100% {
     top: -250%;
+    opacity: 0;
   }
 }
+
 
 .year {
   position: absolute;
@@ -166,15 +174,18 @@ body {
 .new {
   position: absolute;
   right: -100px;
+  z-index: 10; /* Lebih tinggi dari angka lama */
   animation: new_animation 5s ease-in-out 1.5s forwards;
 }
 
 @keyframes new_animation {
   0% {
     right: -100px;
+    opacity: 0;
   }
   40% {
     right: 200px;
+    opacity: 1;
   }
   90% {
     right: 300px;
@@ -183,6 +194,7 @@ body {
     right: 380px;
     color: yellow;
   }
+
 }
 
 
